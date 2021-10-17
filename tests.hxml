@@ -1,0 +1,16 @@
+-main TestAll
+-debug
+-lib utest
+-cp .\test
+
+--each
+
+--cmd echo ----hl----
+--next
+--hl bin/main.hl
+--cmd hl bin/main.hl
+
+--cmd echo ----jvm----
+--next
+--jvm bin/main.jar
+--cmd java -jar bin/main.jar
