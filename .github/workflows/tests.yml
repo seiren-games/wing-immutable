@@ -19,6 +19,7 @@ jobs:
       - run: hl --version
 
       - run: haxelib git utest https://github.com/haxe-utest/utest.git --quiet
+      - run: haxelib install hxjava --quiet
 
       - name: run tests
         run: haxe ./tests.hxml
