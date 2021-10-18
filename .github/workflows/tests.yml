@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout this repository
+        uses: actions/checkout@main
+      - uses: krdlab/setup-haxe@master
+      - run: haxe --version
+
+      - uses: pxshadow/setup-hashlink@v1.0.1
+      - run: hl --version
+
+      - name: run tests
+        run: haxe ./tests.hxml
