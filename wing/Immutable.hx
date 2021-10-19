@@ -4,7 +4,7 @@ import haxe.Exception;
 
 /**
  * The variable is assigned only once.  
- * Declare as final or never.  
+ * Declare as `final` or `never`.  
  */
 @:forward
 abstract Immutable<T>(Null<T>) to Null<T> {
