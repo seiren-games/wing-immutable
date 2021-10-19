@@ -1,7 +1,7 @@
 -main TestAll
 -debug
 -lib utest
--cp .\test
+-cp ./test
 
 --each
 

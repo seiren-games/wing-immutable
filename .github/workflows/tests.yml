@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout this repository
+        uses: actions/checkout@main
+      - uses: krdlab/setup-haxe@master
+      - run: haxe --version
+
+      - uses: pxshadow/setup-hashlink@v1.0.1
+      - run: hl --version
+
+      - run: haxelib git utest https://github.com/haxe-utest/utest.git --quiet
+      - run: haxelib install hxjava --quiet
+
+      - name: run tests
+        run: haxe ./tests.hxml
