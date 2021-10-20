@@ -9,9 +9,11 @@ The purpose is to allow the first assignment in other functions.
 ```haxe
 class Foo {
 	final foo:Immutable<Bool> = new Immutable();
+
 	public function new() {
 		setup();
 	}
+	
 	function setup():Void {
 		foo.assign(true); // OK.
 		trace(foo == true); // By `@:forward` metadata, can be used like the underlying type.
