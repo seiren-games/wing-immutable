@@ -15,9 +15,9 @@ class Foo {
 	}
 	
 	function setup():Void {
-		foo.assign(true); // OK.
+		foo.assign(true); // The first assignment is OK.
 		trace(foo == true); // By `@:forward` metadata, can be used like the underlying type.
-		foo.assign(false); // Runtime error.
+		foo.assign(false); // After the second time, runtime error.
 	}
 }
 ```
