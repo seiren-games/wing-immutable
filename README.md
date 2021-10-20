@@ -6,4 +6,16 @@ Normally if it is `final`, it must be assigned in the constructor.
 The purpose is to allow the first assignment in other functions.  
 
 # Usage
-wip
+```haxe
+class Foo {
+	final foo:Immutable<Bool> = new Immutable();
+	public function new() {
+		setup();
+	}
+	function setup():Void {
+		foo.assign(true); // OK.
+		trace(foo == true); // By `@:forward` metadata, can be used like the underlying type.
+		foo.assign(false); // Runtime error.
+	}
+}
+```
