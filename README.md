@@ -1,5 +1,5 @@
 # wing-immutable
-Make a variable immutable.
+Make a variable immutable.  
 Raise a runtime error on reassignment.
 
 Normally if it is `final`, it must be assigned in the constructor.  
