@@ -19,6 +19,7 @@ abstract Immutable<T>(Null<T>) to Null<T> {
 	// @:op(A = B)
 	public inline function assign(value:T):T {
 		if (this != null) {
+			@:nullSafety(Off)
 			throw new AlreadyAssignError("Cannot assign `" + value + "`, `" + this + "` is already assigned.");
 		}
 		return this = value;
