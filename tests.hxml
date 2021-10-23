@@ -2,7 +2,6 @@
 -debug
 -lib utest
 -cp ./test
--lib safety
 --macro nullSafety("wing", Strict)
 
 --each
