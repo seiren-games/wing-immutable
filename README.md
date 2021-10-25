@@ -25,3 +25,12 @@ class Foo {
 	}
 }
 ```
+
+## Tips: When public, Prevent assignment from outside the class
+```haxe
+final _foo:Immutable<Bool> = new Immutable();
+public var foo(get, never):Bool;
+function get_foo():Bool {
+	return _foo;
+}
+```
