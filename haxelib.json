@@ -4,7 +4,7 @@
   "license": "MIT",
   "tags": [ "utility", "immutable"],
   "description": "Allow `final` to be assigned outside of the constructor.",
-  "version": "1.0.0",
-  "releasenote": "First Release",
+  "version": "1.0.1",
+  "releasenote": "Add tips",
   "contributors": [ "seiren" ]
 }
