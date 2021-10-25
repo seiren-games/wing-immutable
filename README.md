@@ -26,7 +26,7 @@ class Foo {
 }
 ```
 
-## Tips: Prevent assignment from outside
+## Tips: When public, Prevent assignment from outside the class
 ```haxe
 final _foo:Immutable<Bool> = new Immutable();
 public var foo(get, never):Bool;
