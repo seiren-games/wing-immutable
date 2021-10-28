@@ -29,15 +29,15 @@ class Foo {
 ## Tips: When public, Prevent assignment from outside the class
 ```haxe
 final _foo:Immutable<Bool> = new Immutable();
-public var foo(get, never):Bool;
-inline function get_foo():Bool {
+public var foo(get, never):Null<Bool>;
+inline function get_foo():Null<Bool> {
 	return _foo;
 }
 ```
 or
 ```haxe
 final foo:Immutable<Bool> = new Immutable();
-public inline function getFoo():Bool {
+public inline function getFoo():Null<Bool> {
 	return foo;
 }
 ```
