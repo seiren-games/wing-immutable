@@ -1,6 +1,7 @@
 -main TestAll
 -debug
 -lib utest
+-lib safety
 -cp ./test
 --macro nullSafety("wing", Strict)
 
