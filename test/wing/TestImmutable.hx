@@ -4,6 +4,7 @@ import wing.Immutable.AlreadyAssignError;
 import utest.Assert;
 import haxe.io.Path;
 import utest.ITest;
+using Safety;
 
 class TestImmutable implements ITest {
 	public function new() {}
@@ -24,26 +25,30 @@ class TestImmutable implements ITest {
 	}
 
 	public function testExample():Void {
-		new Foo();
+		Assert.isTrue(new Foo().foo.sure());
 	}
 }
 
 class Foo {
-	final foo:Immutable<Bool> = new Immutable();
+	final _foo:Immutable<Bool> = new Immutable();
+	public var foo(get, never):Null<Bool>;
+	inline function get_foo():Null<Bool> {
+		return _foo;
+	}
 
 	public function new() {
 		setup();
 	}
-	
+
 	function setup():Void {
 		// The first assignment is OK.
-		foo.assign(true);
+		_foo.assign(true);
 		// By `@:forward` metadata, can be used like the underlying type.
 		trace(foo == true);
-		
+
 		// After the second time, runtime error.
 		try {
-			foo.assign(false);
+			_foo.assign(false);
 			Assert.fail("Error must occur");
 		} catch (e:AlreadyAssignError) {
 			Assert.pass();
