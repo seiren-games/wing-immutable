@@ -3,7 +3,7 @@
   "url": "https://github.com/seiren-games/wing-immutable",
   "license": "MIT",
   "tags": [ "utility", "immutable"],
-  "description": "Allow `final` to be assigned outside of the constructor.",
+  "description": "Allow final field to be assigned outside of the constructor.",
   "version": "1.0.1",
   "releasenote": "Add tips",
   "contributors": [ "seiren" ]
