@@ -44,6 +44,8 @@ class Foo {
 		// The first assignment is OK.
 		_foo.assign(true);
 		// By `@:forward` metadata, can be used like the underlying type.
+		trace(_foo == true);
+		// Usually use this after assignment.
 		trace(foo == true);
 
 		// After the second time, runtime error.
