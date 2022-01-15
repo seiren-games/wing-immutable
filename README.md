@@ -7,6 +7,8 @@ The purpose is to allow the first assignment in other functions.
 
 # Usage
 ```haxe
+import wing.Immutable;
+
 class Foo {
 	final foo:Immutable<Bool> = new Immutable();
 
@@ -26,7 +28,7 @@ class Foo {
 }
 ```
 
-## Tips: When public, Prevent assignment from outside the class
+## Tips: When public, prevent assignment from outside the class
 ```haxe
 final _foo:Immutable<Bool> = new Immutable();
 public var foo(get, never):Null<Bool>;
