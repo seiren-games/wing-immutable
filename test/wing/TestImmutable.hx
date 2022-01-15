@@ -1,6 +1,6 @@
 package wing;
 
-import wing.Immutable.AlreadyAssignError;
+import wing.Immutable;
 import utest.Assert;
 import haxe.io.Path;
 import utest.ITest;
@@ -16,12 +16,7 @@ class TestImmutable implements ITest {
 		immutable.assign(pathA);
 		Assert.isTrue(immutable != null);
 		Assert.isTrue(immutable == pathA);
-		try {
-			immutable.assign(new Path("b"));
-			Assert.fail("Error must occur");
-		} catch (e:AlreadyAssignError) {
-			Assert.pass();
-		}
+		Assert.raises(immutable.assign.bind(new Path("b")), AlreadyAssignError);
 	}
 
 	public function testExample():Void {
@@ -49,11 +44,6 @@ class Foo {
 		trace(foo == true);
 
 		// After the second time, runtime error.
-		try {
-			_foo.assign(false);
-			Assert.fail("Error must occur");
-		} catch (e:AlreadyAssignError) {
-			Assert.pass();
-		}
+		Assert.raises(_foo.assign.bind(false), AlreadyAssignError);
 	}
 }
